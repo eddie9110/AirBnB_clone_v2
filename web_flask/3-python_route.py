@@ -27,7 +27,7 @@ def c(text):
     return f"C {text}"
 
 
-@app.route("/python/", defaults={"text": "is cool"}, strict_slashes=False)
+@app.route("/python/", defaults={"text": "is cool"})
 @app.route("/python/<text>", text="is cool", strict_slashes=False)
 def python_(text):
     """displays Python+text"""
@@ -36,4 +36,4 @@ def python_(text):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000, host='0.0.0.0')
+    app.run(port=5000, host='0.0.0.0')
