@@ -29,7 +29,7 @@ def c(text):
 @app.route("/python/", defaults={"text": "is cool"}, strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
 def python_(text):
-    """displays Python+text""" 
+    """displays Python+text"""
     text = text.replace("_", " ")
     return f'Python + {text}'
 
@@ -37,7 +37,7 @@ def python_(text):
 @app.route("/number/<int:n>", strict_slashes=False)
 def number_(n):
     """n is a number"""
-        return f"{n} is a number"
+    return f"{n} is a number"
 
 
 @app.route("/number_template/<int:n>", strict_slashes=False)
