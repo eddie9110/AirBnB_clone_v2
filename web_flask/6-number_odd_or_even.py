@@ -49,7 +49,13 @@ def number_temp(n):
 @app.route("/number_odd_or_even/<int:n>", strict_slashes=False)
 def number_odd_even(n):
     """renders a html tmplate"""
-    return render_template('6-number_odd_or_even.html', n=n)
+
+    if n % 2 == 0:
+        no_type = 'even'
+    else:
+        no_type = 'odd'
+
+    return render_template('6-number_odd_or_even.html', n=n, no_type=no_type)
 
 
 if __name__ == '__main__':
