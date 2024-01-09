@@ -20,17 +20,17 @@ env = getenv('HBNB_ENV')
 
 
 class DBStorage:
-  """DataBase storage"""
-  __engine = None
-  __session = None
-  
-  def __init__(self):
-    self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'
-                                .format(user, pwd, host, db),
-                                pool_pre_ping=True) 
+    """DataBase storage"""
+    __engine = None
+    __session = None
+
+    def __init__(self):
+        self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'
+                                      .format(user, pwd, host, db),
+                                      pool_pre_ping=True)
 
     if env == "test":
-      Base.metadata.drop_all(self.__engine)
+        Base.metadata.drop_all(self.__engine)
 
     def all(self, cls=None):
         """  """
